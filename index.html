@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Noob Show - Videos & Media</title>
+  <title>The Noob Show - Official Home Hub</title>
   <style>
-    /* Loading your custom font file from your folder */
+    /* Load custom font file from your root directory */
     @font-face {
       font-family: 'Bubble 01';
-      src: url('Bubble_01.ttf') format('truetype');
+      src: url('bubble_01.ttf') format('truetype');
       font-weight: bold;
       font-style: normal;
     }
 
-    /* Full page gradient using Noobie's signature pastel tones */
+    /* Page-wide pastel rainbow gradient backdrop */
     body {
       background: linear-gradient(135deg, #c7f9cc 0%, #a9def9 50%, #fcf6bd 100%);
       background-attachment: fixed;
       color: #1e3a27;
-      font-family: 'Bubble 01', Arial, sans-serif; /* Set Bubble 01 globally */
+      font-family: 'Bubble 01', Arial, sans-serif;
       text-align: center;
       padding: 40px 20px;
       margin: 0;
     }
 
-    /* Top Site Header Style - Colorful & Clean */
+    /* Top Navigation Header Hub Style */
     .site-header {
       display: flex;
       justify-content: space-between;
@@ -32,7 +32,7 @@
       max-width: 1000px;
       margin: 0 auto 40px auto;
       padding: 15px 25px;
-      background: #a9def9; /* Pastel Blue Header Background */
+      background: #a9def9; /* Pastel Blue */
       border: 4px solid #fcf6bd; /* Bright Pastel Yellow Border */
       border-radius: 50px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -42,6 +42,10 @@
       font-weight: bold;
       font-size: 1.5rem;
       text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
     }
     .nav-link {
       color: #222222;
@@ -53,145 +57,122 @@
       color: #ffffff;
     }
 
+    /* Hero Text Elements */
     h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       color: #2d6a4f;
-      text-shadow: 3px 3px 0px #ffffff;
-      margin-bottom: 10px;
+      text-shadow: 4px 4px 0px #ffffff;
+      margin-bottom: 5px;
     }
-
-    .subtitle {
-      font-size: 1.1rem;
+    .main-subtitle {
+      font-size: 1.3rem;
       color: #1c4e24;
       font-weight: bold;
-      background: #c7f9cc; /* Pastel Green Background */
-      padding: 10px 25px;
+      background: #c7f9cc; /* Pastel Green */
+      padding: 12px 30px;
       border-radius: 20px;
       display: inline-block;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       border: 4px solid #fcf6bd; /* Bright Pastel Yellow Border */
     }
 
-    /* Grid container for multi-column layout */
-    .media-grid {
+    /* Hub Grid Navigation Options */
+    .hub-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 10px;
     }
 
-    /* COLOR OVERLOAD CARDS */
-    .media-card {
-      padding: 30px;
+    /* Color-Overloaded Hub Buttons/Cards */
+    .hub-card {
+      padding: 35px 25px;
       border-radius: 28px;
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-      text-align: left;
+      text-decoration: none;
+      color: inherit;
       display: flex;
       flex-direction: column;
-      position: relative;
-      overflow: hidden;
+      align-items: center;
+      justify-content: center;
       border: 4px solid #fcf6bd; /* Bright Pastel Yellow Border */
-    }
-
-    /* Assigning solid pastel palette backgrounds to the cards */
-    .card-blue { background-color: #a9def9; }
-    .card-yellow { background-color: #fcf6bd; border-color: #ffffff; } /* White border accent on the yellow card so it pops */
-    .card-green { background-color: #c7f9cc; }
-    .card-orange { background-color: #ffcad4; } 
-    .card-purple { background-color: #e8c1ff; }
-
-    /* Text styling inside the colorful cards */
-    .media-card h2 {
-      font-size: 1.7rem;
-      color: #1c3d5a;
-      margin: 0 0 15px 0;
-      text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.6);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     
-    /* Unique text color contrasts for specific cards */
-    .card-green h2 { color: #1b4332; }
-    .card-yellow h2 { color: #744b00; }
-    .card-blue h2 { color: #0b3c5d; }
+    /* Interactive hover feel */
+    .hub-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
 
-    /* Colorful Description Boxes inside the cards */
-    .media-card p {
+    /* Hub Card Color Options */
+    .bg-blue { background-color: #a9def9; }
+    .bg-green { background-color: #c7f9cc; }
+    .bg-yellow { background-color: #fcf6bd; border-color: #ffffff; } /* White border accent */
+    .bg-orange { background-color: #ffcad4; }
+
+    /* Heading Styling inside Hub Cards */
+    .hub-card h2 {
+      font-size: 2rem;
+      margin: 0 0 12px 0;
+      text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.6);
+    }
+    .bg-blue h2 { color: #0b3c5d; }
+    .bg-green h2 { color: #1b4332; }
+    .bg-yellow h2 { color: #744b00; }
+    .bg-orange h2 { color: #5e2a37; }
+
+    /* Card Summaries */
+    .hub-card p {
       font-size: 1rem;
       color: #222222;
       font-weight: bold;
-      line-height: 1.6;
-      margin-top: 15px;
-      margin-bottom: 0;
-      background: rgba(255, 255, 255, 0.6);
-      padding: 12px;
-      border-radius: 16px;
-    }
-
-    /* Video Embed Elements */
-    iframe {
-      width: 100%;
-      border: 4px solid #fcf6bd; /* Bright Pastel Yellow Outlines */
-      border-radius: 16px;
-      background-color: #000;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    }
-    
-    /* Yellow video adjust for the yellow background card */
-    .card-yellow iframe {
-      border-color: #ffffff;
+      line-height: 1.4;
+      margin: 0;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 10px 15px;
+      border-radius: 14px;
+      width: 85%;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation Header -->
+  <!-- Top Hub Navigation Header -->
   <div class="site-header">
-    <a href="../index.html" class="site-title">The Noob Show</a>
-    <a href="../index.html" class="nav-link">← Back to Home</a>
+    <a href="index.html" class="site-title">The Noob Show</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="pages/media.html" class="nav-link">Videos</a>
+    </div>
   </div>
 
-  <h1>Media Library</h1>
-  <p class="subtitle">Teasers, Shorts, and Song Covers from the old channel that i lost accses to</p>
+  <!-- Main Website Heading -->
+  <h1>The Noob Show</h1>
+  <p class="main-subtitle">Welcome to the central portal for all things Noobie!</p>
 
-  <!-- Clean Grid Layout -->
-  <div class="media-grid">
+  <!-- Navigation Grid Base -->
+  <div class="hub-grid">
 
-    <!-- Video 1 - Full Pastel Blue Card -->
-    <div class="media-card card-blue">
-      <h2>anamated noob song v1</h2>
-      <iframe height="200" src="https://www.youtube.com/embed/o4i_PAw4Btc" title="YouTube video player" allowfullscreen></iframe>
-      <p>attempt number 1 at anamating a song called the noob song</p>
+    <!-- Card 1: Links directly over to your Media Library layout -->
+    <a href="pages/media.html" class="hub-card bg-blue">
+      <h2>Videos</h2>
+      <p>Check out our teasers, shorts, and old animated song covers!</p>
+    </a>
+
+    <!-- Card 2: Placeholders for your upcoming character pages -->
+    <div class="hub-card bg-green">
+      <h2>Cast</h2>
+      <p>Meet the characters, specs, and details about Noobie and friends!</p>
     </div>
 
-    <!-- Video 2 - Full Pastel Orange/Pink Card -->
-    <div class="media-card card-orange">
-      <h2>v2 sneek peek no1</h2>
-      <iframe height="200" src="https://www.youtube.com/embed/62rfybiFUjQ" title="YouTube video player" allowfullscreen></iframe>
+    <!-- Card 3: Placeholder for potential future updates or rules -->
+    <div class="hub-card bg-orange">
+      <h2>About</h2>
+      <p>The backstory behind the animation projects and layout concepts!</p>
     </div>
-
-    <!-- Video 3 - Full Pastel Purple Card -->
-    <div class="media-card card-purple">
-      <h2>v2 sneek peek no2</h2>
-      <iframe height="200" src="https://www.youtube.com/embed/U77jD-ETEMM" title="YouTube video player" allowfullscreen></iframe>
-    </div>
-
-    <!-- Video 4 - Full Pastel Green Card -->
-    <div class="media-card card-green">
-      <h2>anamated noob song v2</h2>
-      <iframe height="200" src="https://www.youtube.com/embed/-l4Hi9W5VP8" title="YouTube video player" allowfullscreen></iframe>
-      <p>WOW another attempt but sereosly this took me a month</p>
-    </div>
-
-    <!-- Video 5 - Full Pastel Yellow Card -->
-    <div class="media-card card-yellow">
-      <h2>meet the cast: noobie</h2>
-      <iframe height="380" src="https://www.youtube.com/embed/lTcnMxZMgS0" title="YouTube video player" allowfullscreen></iframe>
-      <p>facts about noobie -OUTDATED-</p>
-    </div>
-
-    <!-- AUTOMATIC POST INSERTER KEYWORD GOES HERE -->
-    <!-- NEW_VIDEOS_GO_HERE -->
 
   </div>
 
